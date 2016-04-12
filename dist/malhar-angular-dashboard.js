@@ -851,7 +851,7 @@ angular.module('ui.dashboard')
     function WidgetModel(widgetDefinition, overrides) {
   
       // Extend this with the widget definition object with overrides merged in (deep extended).
-      angular.extend(this, defaults(), _.merge(angular.copy(widgetDefinition), overrides));
+      angular.extend(this, defaults(), $.merge(angular.copy(widgetDefinition), overrides));
 
       this.updateContainerStyle(this.style);
 
