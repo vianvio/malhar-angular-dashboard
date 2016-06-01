@@ -128,8 +128,12 @@ angular.module('ui.dashboard')
          * Removes a widget instance from the dashboard
          * @param  {Object} widget The widget instance object (not a definition object)
          */
-        scope.removeWidget = function (widget) {
-          scope.widgets.splice(_.indexOf(scope.widgets, widget), 1);
+        scope.removeWidget = function (widget, index) {
+          if(_.isNumber(index) && index >= 0){
+            scope.widgets.splice(index, 1);
+          } else {
+            scope.widgets.splice(_.indexOf(scope.widgets, widget), 1);
+          }
           scope.saveDashboard();
         };
 
